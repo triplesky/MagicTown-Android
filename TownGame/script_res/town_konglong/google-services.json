@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "218770663419",
+    "project_id": "gogotown-dino",
+    "storage_bucket": "gogotown-dino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218770663419:android:7131b3036be56c715c0d5e",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.dino"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6zVujXAMCH1dL43tCiBHlMumk1qTolRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GogoTown" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Actionbar color -->
+        <item name="colorPrimary">@color/white</item>
+        <!--Status bar color-->
+        <item name="colorPrimaryDark">@color/white</item>
+        <!--光标 输入框 radiobutton color-->
+        <item name="colorAccent">#FFE745</item>
+        <!--Window color-->
+        <!--        <item name="android:windowBackground">@color/containerbgcolor</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:windowIsTranslucent">false</item>
+        <!--        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>-->
+        <item name="android:windowDisablePreview">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

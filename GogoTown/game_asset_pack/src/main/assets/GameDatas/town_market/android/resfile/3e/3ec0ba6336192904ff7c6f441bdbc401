@@ -1,0 +1,7 @@
+{
+  "name":"town_market",
+  "scene": "Assets/Game/town_market/res/Main.unity",
+  "assembly": "Game.town_market"
+}
+
+

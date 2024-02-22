@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1027169615900",
+    "project_id": "gogotown-tale",
+    "storage_bucket": "gogotown-tale.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027169615900:android:ab96a639f53df0186f1fd9",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.tale"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2pQGwrK75qEcGebvsQ4sTvSadUJ0UGGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

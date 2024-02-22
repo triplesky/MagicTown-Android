@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "602020970487",
+    "project_id": "gogotown-salon",
+    "storage_bucket": "gogotown-salon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602020970487:android:c322750a73b32b040678f2",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.salon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQOBTJuQOR2JRdcT1nLEFRnpC_2wJHbQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

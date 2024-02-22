@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "631378163334",
+    "project_id": "gogo-town",
+    "storage_bucket": "gogo-town.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631378163334:android:bbcf5ee0014df7bf488307",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631378163334-pc88mi57gs99qp88io1thvt0b3rgf44a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9dsWXoOwRa4HsmvvX1OTMuYIUfeQelSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631378163334-pc88mi57gs99qp88io1thvt0b3rgf44a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "631378163334-j5mm3e7ioc4uu2hv4jh6frvmorugs4bb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bekids.gogotown",
+                "app_store_id": "1661911273"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631378163334:android:a8b799eded0633f8488307",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631378163334-pc88mi57gs99qp88io1thvt0b3rgf44a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9dsWXoOwRa4HsmvvX1OTMuYIUfeQelSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631378163334-pc88mi57gs99qp88io1thvt0b3rgf44a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "631378163334-j5mm3e7ioc4uu2hv4jh6frvmorugs4bb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bekids.gogotown",
+                "app_store_id": "1661911273"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

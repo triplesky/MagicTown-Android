@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "121033237438",
+    "project_id": "gogotown-pizzashop",
+    "storage_bucket": "gogotown-pizzashop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121033237438:android:af5cfd95242a5d2e998fef",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.pizzashop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGRbJwJKpE5B11VHABp5g5WKfKyCjZlKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121033237438:android:1129a7e655b31689998fef",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.pizzashop.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGRbJwJKpE5B11VHABp5g5WKfKyCjZlKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

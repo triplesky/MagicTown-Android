@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="title_color">#4da76a</color>
+    <color name="privacy_text_color">#666666</color>
+    <color name="privacy_text_color_high_light">#4da76a</color>
+    <color name="forget_pwd">#4da76a</color>
+    <color name="input_text_color">#666666</color>
+    <color name="input_background_color">#ffffff</color>
+    <color name="input_placeholder_color">#c8c8c8</color>
+    <color name="ui_color_transparent">#00000000</color>
+    <color name="dialog_bg">#b3000000</color>
+    <color name="containerbgcolor">#FF6200EE</color>
+
+</resources>

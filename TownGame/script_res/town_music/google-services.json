@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250504833098",
+    "project_id": "gogotown-music",
+    "storage_bucket": "gogotown-music.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250504833098:android:0de74477a08199cd0e9eb3",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.music"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB96s5cVeEg7ufLq2Xtts0ivq9KH2f_Qpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

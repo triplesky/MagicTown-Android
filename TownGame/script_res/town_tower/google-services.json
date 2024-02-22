@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731327374169",
+    "project_id": "gogotown-tower",
+    "storage_bucket": "gogotown-tower.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731327374169:android:6e25e0f14aacef8fe82248",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.tower"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUxc0Xz3QFPxI_GlOTvMhu6VYpNx-iL4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

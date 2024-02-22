@@ -1,0 +1,29 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/base_round_ffffff_all_r9.xml" value="0.188" />
+        <entry key="app/src/main/res/drawable/button_normal_f7f8f7_shape_oval.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/button_normal_gray_shape_oval.xml" value="0.188" />
+        <entry key="app/src/main/res/drawable/button_normal_yellow_shape_oval.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/rect_with_roundconer_white_bg.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/training_camp_class_bg.xml" value="0.188" />
+        <entry key="app/src/main/res/drawable/ui_round_f9f9f9_all_r24.xml" value="0.188" />
+        <entry key="app/src/main/res/drawable/ui_round_ffe745_all_r24.xml" value="0.188" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/permission_dialog.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/setting_per_dialog.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/test.xml" value="0.3619791666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.269" />
+        <entry key="bekids_module_base/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.269" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

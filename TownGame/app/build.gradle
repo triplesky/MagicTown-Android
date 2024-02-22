@@ -1,0 +1,238 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.alibaba.arouter'
+    id 'kotlin-android-extensions'
+}
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdk 33
+    def application_id = project.hasProperty('PACKAGE_NAME') ? PACKAGE_NAME:""
+    def app_name = project.hasProperty('APP_NAME') ? APP_NAME : ""
+    def app_name_new = app_name.replace("_", " ")
+    def version_code = project.hasProperty('VERSION_CODE') ? Integer.parseInt(VERSION_CODE) : 100
+    def version_name = project.hasProperty('VERSION_NAME') ? VERSION_NAME : "1.0.0"
+    def app_id = project.hasProperty('APP_ID') ? APP_ID : "11200"
+    def bugly_id = project.hasProperty('BUGLY_APP_ID') ? BUGLY_APP_ID : ""
+    def google_key = project.hasProperty('GOOGLE_KEY') ? GOOGLE_KEY : ""
+    defaultConfig {
+
+
+        applicationId "${application_id}"
+        println("lldebug gradle applicationid: ${applicationId}")
+        minSdk 22
+        targetSdk 33
+        versionCode version_code
+        versionName "${version_name}"
+        ndk {
+            abiFilters 'armeabi-v7a', "arm64-v8a"
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        println("lldebug appname : ${app_name_new}${app_name}")
+        manifestPlaceholders = [APP_NAME: "${app_name_new}"]
+        multiDexEnabled true
+    }
+
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../keystore.jks")
+            storePassword "gogotown"
+            keyAlias "gogotown"
+            keyPassword "gogotown"
+        }
+
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "gogotown"
+            keyAlias "gogotown"
+            keyPassword "gogotown"
+        }
+
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+        doNotStrip '*/arm64-v8a/*.so'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+
+
+    flavorDimensions "environment"
+    productFlavors {
+
+
+        staging {
+            dimension "environment"
+            applicationId "${applicationId}"+".staging"
+
+            //environment
+            buildConfigField "int", "APP_ENVIRONMENT", "2"
+            buildConfigField "String", "BUGLY_APP_ID", "\"${bugly_id}\""
+
+            buildConfigField "int", "APP_ID", "${app_id}"
+            buildConfigField "String", "APP_KEY", "\"987210mnbvcxzlkjhgfdsapoiuytrewq\""
+            buildConfigField "String", "APP_NAME", "\"${app_name_new}\""
+            buildConfigField "String", "APP_PUBLIC_KEY", "\"-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCp7JB6i0sYAgcOlB3Qnp3l6VzxtCz2w16s6WmE9A2t9/40c/tIhbCmGxAk4DRWGcLkrZKs7DquOk7i5M7x1I7PvGwpKCahlc98XM51eBdw9t2VMCezaRQE3YuHrWCCWEpC6W8a53ansyGZQocTiKqzF35HNKz9fYvVrvcrdXO0kQIDAQAB-----END PUBLIC KEY-----\""
+            buildConfigField "String", "GOOGLE", "\"${google_key}\""
+
+            //buildConfigField "String", "FB_ID", "\"2375299879306744\""
+            //buildConfigField "String", "FB_KEY", "\"5b507e40af4a6fe3737d9983502d6443\""
+        }
+
+        product {
+            dimension "environment"
+            applicationId "${application_id}"
+            println("lldebug gradle pro applicationid: ${application_id}${bugly_id}")
+            //environment
+            buildConfigField "int", "APP_ENVIRONMENT", "3"
+            buildConfigField "String", "BUGLY_APP_ID", "\"${bugly_id}\""
+
+            buildConfigField "int", "APP_ID", "${app_id}"
+            buildConfigField "String", "APP_KEY", "\"wsfinMnvehwdf7Nbiqtqxfadbuivbh1s\""
+            buildConfigField "String", "APP_NAME", "\"${app_name_new}\""
+            buildConfigField "String", "APP_PUBLIC_KEY", "\"-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA30TFa+cOlcVFx9zOVZzw8AdIwYS2rbwBo4nSz0Ith2ObANq+IzTklNGOJpyYDH8flh09ackLv3seKhjm66bPJd4OFuJrPlRXacTTd6GTYOsg8GopdjBKhmH3M+ifzlkuBLhb4oyFPMlG9hD+3sbBfyoPPe0ay4CXGgsA2IBI+G5bYHzclb9GzbcHn/9TnC9gVM9mCv+CtoL0GCLqLKwoepiqrb+JqtYoOW117QnfDQB+JMYYwMN6rTJedEZU+xDj5DLrzcqN5EM+54sSZiEwzQTwng6A61/wNyxrEHo/BH0CTAqi+c4Sqi5bcraCm5XLEsslmkE8gp2fapq4q7g/jwIDAQAB-----END PUBLIC KEY-----\""
+            buildConfigField "String", "GOOGLE", "\"${google_key}\""
+           // buildConfigField "String", "FB_ID", "\"2375299879306744\""
+            //buildConfigField "String", "FB_KEY", "\"5b507e40af4a6fe3737d9983502d6443\""
+        }
+    }
+    assetPacks = [":game_asset_pack"]
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+
+    implementation 'com.jakewharton.timber:timber:4.7.0'
+    implementation project(path: ":bekids_module_base")
+    implementation 'com.ihuman.sdk.lib:attribution:1.0.22'
+
+    implementation 'com.ihuman.sdk.module:benefit:0.0.25'
+
+
+    implementation "com.orhanobut:dialogplus:1.11@aar"
+
+    // Play Core
+    implementation 'com.google.android.play:core:1.10.3'
+
+
+    implementation 'com.ihuman.media.player:bridge:1.0.0-alpha42'
+    implementation 'com.ihuman.media.player:ijk:1.0.0-alpha42'
+
+
+}
+
+def getSdkDir() {
+    Properties local = new Properties()
+    local.load(new FileInputStream("${rootDir}/local.properties"))
+    return local.getProperty('sdk.dir')
+}
+
+def BuildIl2Cpp(String workingDir, String configuration, String architecture, String abi, String[] staticLibraries) {
+    def commandLineArgs = []
+    commandLineArgs.add("--compile-cpp")
+    commandLineArgs.add("--platform=Android")
+    commandLineArgs.add("--architecture=" + architecture)
+    commandLineArgs.add("--outputpath=" + workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.so")
+    commandLineArgs.add("--libil2cpp-static")
+    commandLineArgs.add("--baselib-directory=" + workingDir + "/src/main/jniStaticLibs/" + abi)
+    commandLineArgs.add("--configuration=" + configuration)
+    commandLineArgs.add("--dotnetprofile=unityaot-linux")
+    commandLineArgs.add("--profiler-report")
+    commandLineArgs.add("--profiler-output-file=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_conv.traceevents")
+    commandLineArgs.add("--print-command-line")
+    commandLineArgs.add("--generatedcppdir=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput")
+    commandLineArgs.add("--cachedirectory=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_cache")
+    commandLineArgs.add("--tool-chain-path=" + android.ndkDirectory)
+    staticLibraries.eachWithIndex {fileName, i->
+        commandLineArgs.add("--additional-libraries=" + workingDir + "/src/main/jniStaticLibs/" + abi + "/" + fileName)
+    }
+    def executableExtension = ""
+    if (org.gradle.internal.os.OperatingSystem.current().isWindows())
+        executableExtension = ".exe"
+    exec {
+        executable workingDir + "/src/main/Il2CppOutputProject/IL2CPP/build/deploy/il2cpp" + executableExtension
+        args commandLineArgs
+        environment "ANDROID_SDK_ROOT", getSdkDir()
+    }
+    delete workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.sym.so"
+    ant.move(file: workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.dbg.so", tofile: workingDir + "/symbols/" + abi + "/libil2cpp.so")
+}
+
+android {
+    task BuildIl2CppTask {
+        doLast {
+            BuildIl2Cpp(projectDir.toString().replaceAll('\\\\', '/'), 'Release', 'armv7', 'armeabi-v7a', [  ] as String[]);
+            BuildIl2Cpp(projectDir.toString().replaceAll('\\\\', '/'), 'Release', 'arm64', 'arm64-v8a', [  ] as String[]);
+        }
+    }
+    afterEvaluate {
+        if (project(':app').tasks.findByName('mergeDebugJniLibFolders'))
+            project(':app').mergeDebugJniLibFolders.dependsOn BuildIl2CppTask
+        if (project(':app').tasks.findByName('mergeReleaseJniLibFolders'))
+            project(':app').mergeReleaseJniLibFolders.dependsOn BuildIl2CppTask
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = ["src/main/Il2CppOutputProject"]
+        }
+    }
+}

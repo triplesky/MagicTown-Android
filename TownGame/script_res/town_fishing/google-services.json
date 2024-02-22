@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "624016786067",
+    "project_id": "gogotown-fishing",
+    "storage_bucket": "gogotown-fishing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624016786067:android:33c1d23442eb8730b70366",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.fishing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9uY6VXL-XGDzMqxXfMf91Maf7gc9-HHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

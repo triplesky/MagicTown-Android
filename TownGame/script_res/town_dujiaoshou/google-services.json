@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "82136476485",
+    "project_id": "gogotown-unicorns-104f5",
+    "storage_bucket": "gogotown-unicorns-104f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82136476485:android:fb05cd2fb32b9bb67aec2c",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.unicorns"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtGmg65wi9UiNhDEaOGmSNJOuvkt8geEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

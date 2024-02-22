@@ -1,0 +1,48 @@
+pluginManagement {
+    repositories {
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            allowInsecureProtocol = true}
+        gradlePluginPortal()
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'http://nexus-in.dev.ihuman.com:8081/repository/maven-public/'
+            allowInsecureProtocol = true}
+//        maven { url 'http://10.12.7.61:8081/repository/jcenter/'
+//            allowInsecureProtocol = true}
+//        maven { url 'http://10.12.7.61:8081/repository/maven-public/'
+//            allowInsecureProtocol = true}
+        maven { url 'http://developer.huawei.com/repo/'
+            allowInsecureProtocol = true}
+
+    }
+
+
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            allowInsecureProtocol = true}
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'http://nexus-in.dev.ihuman.com:8081/repository/maven-public/'
+            allowInsecureProtocol = true}
+//        maven { url 'http://10.12.7.61:8081/repository/jcenter/'
+//            allowInsecureProtocol = true}
+//        maven { url 'http://10.12.7.61:8081/repository/maven-public/'
+//            allowInsecureProtocol = true}
+        maven { url 'http://developer.huawei.com/repo/'
+            allowInsecureProtocol = true}
+
+
+    }
+
+}
+rootProject.name = "bekids Town"
+include ':app'
+include ':bekids_module_base'
+include ':game_asset_pack'

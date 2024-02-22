@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "693901837227",
+    "project_id": "gogo-mini-world",
+    "storage_bucket": "gogo-mini-world.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693901837227:android:3cdd174c6230dfda1788ee",
+        "android_client_info": {
+          "package_name": "com.bekids.miniworld"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADIg1pgC_CM2fZ7w84WYF-HAtMMNq0uk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

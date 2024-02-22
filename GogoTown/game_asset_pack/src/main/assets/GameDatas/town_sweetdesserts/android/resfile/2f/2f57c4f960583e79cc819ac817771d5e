@@ -1,0 +1,7 @@
+{
+  "name":"town_sweetdesserts",
+  "scene": "Assets/Game/town_sweetdesserts/res/Main.unity",
+  "assembly": "Game.town_sweetdesserts"
+}
+
+

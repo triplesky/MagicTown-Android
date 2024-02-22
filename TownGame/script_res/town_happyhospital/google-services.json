@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "965108797824",
+    "project_id": "gogotown-hospital",
+    "storage_bucket": "gogotown-hospital.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965108797824:android:0a389d7f30c4b8962a3165",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.happyhospital"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0QmQcf_uqmwsfk9px6F7yTZ40KfAhF48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965108797824:android:7d329e6a3e4e16582a3165",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.happyhospital.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0QmQcf_uqmwsfk9px6F7yTZ40KfAhF48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

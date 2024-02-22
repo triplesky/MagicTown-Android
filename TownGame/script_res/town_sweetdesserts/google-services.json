@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193231293806",
+    "project_id": "gogotown-dessert",
+    "storage_bucket": "gogotown-dessert.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193231293806:android:a1db317fb2da3e5776057f",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.dessert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBE_8S7sjduqlnydtAx9kPwlr-U4Qq3UA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

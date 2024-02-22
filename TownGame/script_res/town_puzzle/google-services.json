@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1099154290640",
+    "project_id": "gogotown-puzzle",
+    "storage_bucket": "gogotown-puzzle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099154290640:android:1604f5bc6021c449f9abd5",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.puzzle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUyWtV6MBQFhlGsIAxZgBXS6qA09Mq_VQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

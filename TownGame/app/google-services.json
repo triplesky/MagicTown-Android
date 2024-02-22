@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "818642369150",
+    "project_id": "gogotown-car",
+    "storage_bucket": "gogotown-car.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818642369150:android:72287da43e8565948ab62f",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.car"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIMB_e9LV6aooww_rXTkDX5m73lzNmhM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818642369150:android:72d4c4dcc8ac57028ab62f",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.car.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIMB_e9LV6aooww_rXTkDX5m73lzNmhM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

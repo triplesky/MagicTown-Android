@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><!--课中点击返回后的挽留弹窗-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="wrap_content"
+        android:background="@drawable/base_round_ffffff_all_r9">
+
+
+        <TextView
+            android:id="@+id/tvCourseDialogDetainTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Permissions Request"
+            android:textColor="#ff363636"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/version_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:padding="@dimen/dp_20"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="@dimen/dp_15"
+            android:lineSpacingExtra="3dp"
+            android:textColor="#858585"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCourseDialogDetainTip"/>
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ui_round_f9f9f9_all_r24"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="no"
+            android:textColor="#FFAC2D"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/version_detail" />
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/ui_round_ffe745_all_r24"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="ok"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/version_detail" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

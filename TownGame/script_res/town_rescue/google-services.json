@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "26656545189",
+    "project_id": "gogotown-rescue",
+    "storage_bucket": "gogotown-rescue.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26656545189:android:c36476ef5a49a990b8304c",
+        "android_client_info": {
+          "package_name": "com.bekids.gogotown.rescue"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYH9YxaCRuVxvWRTrJproRkv5a2UfPSlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,244 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.alibaba.arouter'
+    id 'kotlin-android-extensions'
+}
+apply plugin: 'com.google.gms.google-services'
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.bekids.miniworld"
+        minSdk 22
+        targetSdk 33
+        versionCode 281
+        versionName "2.8.1"
+        ndk {
+            abiFilters 'armeabi-v7a', "arm64-v8a"
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+//        manifestPlaceholders = ['FACEBOOK_APP_ID': '2375299879306744']
+        multiDexEnabled true
+    }
+
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../keystore.jks")
+            storePassword "gogotown"
+            keyAlias "gogotown"
+            keyPassword "gogotown"
+        }
+
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "gogotown"
+            keyAlias "gogotown"
+            keyPassword "gogotown"
+        }
+
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        doNotStrip '*/armeabi-v7a/*.so'
+        doNotStrip '*/arm64-v8a/*.so'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            applicationId "com.bekids.gogotown.staging"
+
+            //environment
+            buildConfigField "int", "APP_ENVIRONMENT", "2"
+            buildConfigField "String", "BUGLY_APP_ID", "\"4cf781497c\""
+
+            buildConfigField "int", "APP_ID", "112"
+            buildConfigField "String", "APP_KEY", "\"987210mnbvcxzlkjhgfdsapoiuytrewq\""
+            buildConfigField "String", "APP_NAME", "\"Gogo Mini\""
+            buildConfigField "String", "APP_PUBLIC_KEY", "\"-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCp7JB6i0sYAgcOlB3Qnp3l6VzxtCz2w16s6WmE9A2t9/40c/tIhbCmGxAk4DRWGcLkrZKs7DquOk7i5M7x1I7PvGwpKCahlc98XM51eBdw9t2VMCezaRQE3YuHrWCCWEpC6W8a53ansyGZQocTiKqzF35HNKz9fYvVrvcrdXO0kQIDAQAB-----END PUBLIC KEY-----\""
+            buildConfigField "String", "GOOGLE", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlpPhxhBwwMa6k2IC5KkAhNxjgTlnxOooXlUlX+uN6yr8Ix0VwfCV9MN1mj+rvhUcWlBBm1Y9CSK1DlpruGni6088TS4+DQbcr2eEcMlFJfCaCsbZN537SWZAXqCCOynRPjPYO0YfkT7B5lGs7w2URARj2P+hZOIz4nTFZ0UeD3mY1CMEV9w4Gi29DNS+ny18kRqDfQp/Z0SZSSuPWko2Rx9/zRsX+KM0VwFaXNKS4KsU/KexhYIzxpI96f+s7/2AykUX18Hvn1QnG880DQvW2ICTNOQlKBWqfSro6k4VpvGF70q66fegCau2XsNYOaSDAAeI5Jt8v3XlDQRqBf5mrwIDAQAB\""
+            buildConfigField "String", "FB_ID", "\"2375299879306744\""
+            buildConfigField "String", "FB_KEY", "\"5b507e40af4a6fe3737d9983502d6443\""
+        }
+
+        staging {
+            dimension "environment"
+            applicationId "com.bekids.gogotown.staging"
+
+            //environment
+            buildConfigField "int", "APP_ENVIRONMENT", "2"
+            buildConfigField "String", "BUGLY_APP_ID", "\"4cf781497c\""
+
+            buildConfigField "int", "APP_ID", "112"
+            buildConfigField "String", "APP_KEY", "\"987210mnbvcxzlkjhgfdsapoiuytrewq\""
+            buildConfigField "String", "APP_NAME", "\"Gogo Mini\""
+            buildConfigField "String", "APP_PUBLIC_KEY", "\"-----BEGIN PUBLIC KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCp7JB6i0sYAgcOlB3Qnp3l6VzxtCz2w16s6WmE9A2t9/40c/tIhbCmGxAk4DRWGcLkrZKs7DquOk7i5M7x1I7PvGwpKCahlc98XM51eBdw9t2VMCezaRQE3YuHrWCCWEpC6W8a53ansyGZQocTiKqzF35HNKz9fYvVrvcrdXO0kQIDAQAB-----END PUBLIC KEY-----\""
+            buildConfigField "String", "GOOGLE", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlpPhxhBwwMa6k2IC5KkAhNxjgTlnxOooXlUlX+uN6yr8Ix0VwfCV9MN1mj+rvhUcWlBBm1Y9CSK1DlpruGni6088TS4+DQbcr2eEcMlFJfCaCsbZN537SWZAXqCCOynRPjPYO0YfkT7B5lGs7w2URARj2P+hZOIz4nTFZ0UeD3mY1CMEV9w4Gi29DNS+ny18kRqDfQp/Z0SZSSuPWko2Rx9/zRsX+KM0VwFaXNKS4KsU/KexhYIzxpI96f+s7/2AykUX18Hvn1QnG880DQvW2ICTNOQlKBWqfSro6k4VpvGF70q66fegCau2XsNYOaSDAAeI5Jt8v3XlDQRqBf5mrwIDAQAB\""
+
+            buildConfigField "String", "FB_ID", "\"2375299879306744\""
+            buildConfigField "String", "FB_KEY", "\"5b507e40af4a6fe3737d9983502d6443\""
+            manifestPlaceholders = ['appName': 'Gogo Mini S']
+        }
+
+        product {
+            dimension "environment"
+            applicationId "com.bekids.miniworld"
+
+            //environment
+            buildConfigField "int", "APP_ENVIRONMENT", "3"
+            buildConfigField "String", "BUGLY_APP_ID", "\"5cf8820420\""
+
+            buildConfigField "int", "APP_ID", "112"
+            buildConfigField "String", "APP_KEY", "\"wsfinMnvehwdf7Nbiqtqxfadbuivbh1s\""
+            buildConfigField "String", "APP_NAME", "\"Gogo Mini\""
+            buildConfigField "String", "APP_PUBLIC_KEY", "\"-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA30TFa+cOlcVFx9zOVZzw8AdIwYS2rbwBo4nSz0Ith2ObANq+IzTklNGOJpyYDH8flh09ackLv3seKhjm66bPJd4OFuJrPlRXacTTd6GTYOsg8GopdjBKhmH3M+ifzlkuBLhb4oyFPMlG9hD+3sbBfyoPPe0ay4CXGgsA2IBI+G5bYHzclb9GzbcHn/9TnC9gVM9mCv+CtoL0GCLqLKwoepiqrb+JqtYoOW117QnfDQB+JMYYwMN6rTJedEZU+xDj5DLrzcqN5EM+54sSZiEwzQTwng6A61/wNyxrEHo/BH0CTAqi+c4Sqi5bcraCm5XLEsslmkE8gp2fapq4q7g/jwIDAQAB-----END PUBLIC KEY-----\""
+            buildConfigField "String", "GOOGLE", "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoevERJb8PSHqBy/mWJRBmh5EtvlOttKGbh5P7w5yGVovlTR4NT5LoBrYAmv5NlbFapYdzG5fX5BcR1H2d4vuwcIBqtP15rMmq7e54TN6pJBRQvIMZ7Z9vJA/UI+++BIAhFpmi6ks2LtXvMiaO0W5zv4iR+thHeto3ZGZnH8/Ed87XcBb9Hf2T1kAv5td2mETQ7HWbjf+qH8jZLxnZ9g0y64JICfyTq7Q9L/1UDSvowRwjVsN8LYXn9fQhp2Yey6AlwGpmjoe1KwdN5xZKGQ+b4IqnduwnE9qkU+hcz3MVJdvl1BCBtRgnPm/Q3vvaNrsZvkD5Ykc/fpEB4BgoiSmcQIDAQAB\""
+            buildConfigField "String", "FB_ID", "\"2375299879306744\""
+            buildConfigField "String", "FB_KEY", "\"5b507e40af4a6fe3737d9983502d6443\""
+            manifestPlaceholders = ['appName': 'Gogo Mini']
+        }
+    }
+    assetPacks = [":game_asset_pack"]
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+
+    implementation 'com.jakewharton.timber:timber:4.7.0'
+    implementation project(path: ":bekids_module_base")
+    implementation 'com.ihuman.sdk.lib:attribution:1.0.25'
+//    implementation 'com.ihuman.sdk.lib:facebook:3.2.32'
+    implementation 'com.ihuman.sdk.module:benefit:0.0.33'
+
+
+    implementation "com.orhanobut:dialogplus:1.11@aar"
+
+    // Play Core
+    implementation 'com.google.android.play:core:1.10.3'
+
+
+    implementation 'com.ihuman.media.player:bridge:1.0.0-alpha44'
+    implementation 'com.ihuman.media.player:ijk:1.0.0-alpha44'
+
+
+}
+
+def getSdkDir() {
+    Properties local = new Properties()
+    local.load(new FileInputStream("${rootDir}/local.properties"))
+    return local.getProperty('sdk.dir')
+}
+
+def BuildIl2Cpp(String workingDir, String configuration, String architecture, String abi, String[] staticLibraries) {
+    def commandLineArgs = []
+    commandLineArgs.add("--compile-cpp")
+    commandLineArgs.add("--platform=Android")
+    commandLineArgs.add("--architecture=" + architecture)
+    commandLineArgs.add("--outputpath=" + workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.so")
+    commandLineArgs.add("--libil2cpp-static")
+    commandLineArgs.add("--baselib-directory=" + workingDir + "/src/main/jniStaticLibs/" + abi)
+    commandLineArgs.add("--configuration=" + configuration)
+    commandLineArgs.add("--dotnetprofile=unityaot-linux")
+    commandLineArgs.add("--profiler-report")
+    commandLineArgs.add("--profiler-output-file=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_conv.traceevents")
+    commandLineArgs.add("--print-command-line")
+    commandLineArgs.add("--generatedcppdir=" + workingDir + "/src/main/Il2CppOutputProject/Source/il2cppOutput")
+    commandLineArgs.add("--cachedirectory=" + workingDir + "/build/il2cpp_"+ abi + "_" + configuration + "/il2cpp_cache")
+    commandLineArgs.add("--tool-chain-path=" + android.ndkDirectory)
+    staticLibraries.eachWithIndex {fileName, i->
+        commandLineArgs.add("--additional-libraries=" + workingDir + "/src/main/jniStaticLibs/" + abi + "/" + fileName)
+    }
+    def executableExtension = ""
+    if (org.gradle.internal.os.OperatingSystem.current().isWindows())
+        executableExtension = ".exe"
+    exec {
+        executable workingDir + "/src/main/Il2CppOutputProject/IL2CPP/build/deploy/il2cpp" + executableExtension
+        args commandLineArgs
+        environment "ANDROID_SDK_ROOT", getSdkDir()
+    }
+    delete workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.sym.so"
+    ant.move(file: workingDir + "/src/main/jniLibs/" + abi + "/libil2cpp.dbg.so", tofile: workingDir + "/symbols/" + abi + "/libil2cpp.so")
+}
+
+android {
+    task BuildIl2CppTask {
+        doLast {
+            BuildIl2Cpp(projectDir.toString().replaceAll('\\\\', '/'), 'Release', 'armv7', 'armeabi-v7a', [  ] as String[]);
+            BuildIl2Cpp(projectDir.toString().replaceAll('\\\\', '/'), 'Release', 'arm64', 'arm64-v8a', [  ] as String[]);
+        }
+    }
+    afterEvaluate {
+        if (project(':app').tasks.findByName('mergeDebugJniLibFolders'))
+            project(':app').mergeDebugJniLibFolders.dependsOn BuildIl2CppTask
+        if (project(':app').tasks.findByName('mergeReleaseJniLibFolders'))
+            project(':app').mergeReleaseJniLibFolders.dependsOn BuildIl2CppTask
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = ["src/main/Il2CppOutputProject"]
+        }
+    }
+}

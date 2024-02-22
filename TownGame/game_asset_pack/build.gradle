@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+    id 'com.android.asset-pack'
+}
+
+assetPack {
+    packName = 'game_asset_pack'
+    dynamicDelivery {
+        deliveryType = "install-time" //PAD资源分发 安装时分发
+    }
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.bekids.gogotown.game_asset_pack"
+        minSdk 22
+        targetSdk 33
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
